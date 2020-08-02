@@ -1,0 +1,173 @@
+### Login
+POST http://localhost:3000/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "lekansulaimon@gmail.com",
+  "password": "admin123@"
+}
+
+### register new user
+POST http://localhost:3000/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "Rasaq",
+  "lastName": "Sulaimon",
+  "email": "lekansulaimon1@gmail.com",
+  "password": "user@123"
+}
+### Reset access token
+POST http://localhost:3000/token
+Accept: application/json
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMjA2NTd9.DTsbqll_sS3yc6EYmwf_NNnnklg4PwYahkUcYKvE9cs"
+}
+
+###
+GET http://localhost:3000/admin
+
+###
+GET http://localhost:3000/admin/refreshtokens
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMTE5OTksImV4cCI6MTU5NjMxMjU5OX0.A56AsLtt1AIOxmeu_QY4tztoMIsymetU5yhU0zK1pAA
+
+
+### Update password admin
+PUT http://localhost:3000/admin/updatepassword/5f20c3fbb03141089659a80b
+Accept: application/json
+Content-Type: application/json
+
+{
+  "pwd": "admin123@",
+  "comparePwd": "admin123@"
+}
+
+### Role management
+POST http://localhost:3000/admin/addrole
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMTEzNDUsImV4cCI6MTU5NjMxMTk0NX0.5238B9WTn9SDCiiXK3rVnt-MrzhbwUSsBuffWzjv1XY
+
+{
+  "name": "admin",
+  "desc": "This is the super admin role"
+}
+
+###
+GET  http://localhost:3000/admin/roles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMTYwMDAsImV4cCI6MTU5NjMxNjYwMH0.94E9G3GsvJ7C7fmi8s3tEaqqn5cOQtXIZeHkW65wEQg
+###
+GET  http://localhost:3000/admin/role/5f1f6e8e298999521d3ac9a5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMTg5OTAsImV4cCI6MTU5NjMxOTU5MH0.PMr6KoC2Q0oigU0RMT5UHomk6oNjmZ0L-fxetVmEkcs
+
+### 
+DELETE   http://localhost:3000/admin/role/5f20cba3bb9f2e090467df2a
+
+###
+POST http://localhost:3000/admin/adduser
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "Rasaq",
+  "lastName": "Sulaimon",
+  "email": "lekansulaimon@gmail.com",
+  "roleId": "5f1f6e8e298999521d3ac9a5"
+}
+
+###
+GET  http://localhost:3000/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMjAxODQsImV4cCI6MTU5NjMyNzM4NH0.k2AeQVChGUnngjKiFLmVRklgU-UIPE0-TcMysJwQSC4
+###
+GET  http://localhost:3000/admin/user/5f20c7ea5167ee08c818533f
+
+### Delete user
+DELETE   http://localhost:3000/admin/user/5f20cf7938d045092b1516b6
+
+###
+### Load tickets by admin
+GET  http://localhost:3000/admin/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOnsiX2lkIjoiNWYxZjZlOGUyOTg5OTk1MjFkM2FjOWE1IiwibmFtZSI6ImFkbWluIiwiZGVzYyI6IlRoaXMgaXMgdGhlIHN1cGVyIGFkbWluIHJvbGUiLCJfX3YiOjB9LCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzNjYyODksImV4cCI6MTU5NjM3MzQ4OX0.kB8jMyyhWpANseGTj18_Hk4bxKfemX5uC8uwvT2heQI
+
+### Load full support ticket details
+GET  http://localhost:3000/admin/ticket/5f25f86df6f4572925bfb730
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMjc0OTYsImV4cCI6MTU5NjMzNDY5Nn0.hE8HS4rXsbbq9WKtK2Jg1LnmDtw6aNbe8PV-9GFp8NY
+
+### Add comment to ticket
+POST  http://localhost:3000/admin/ticket/5f25f86df6f4572925bfb730/comment
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMjc0OTYsImV4cCI6MTU5NjMzNDY5Nn0.hE8HS4rXsbbq9WKtK2Jg1LnmDtw6aNbe8PV-9GFp8NY
+
+{
+  "comment": "Lovely laptop has gone faulty!!"
+}
+
+### Close/reopen ticket by admin
+PUT  http://localhost:3000/admin/ticket/5f25f86df6f4572925bfb730/status/false
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOiI1ZjFmNmU4ZTI5ODk5OTUyMWQzYWM5YTUiLCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMjc0OTYsImV4cCI6MTU5NjMzNDY5Nn0.hE8HS4rXsbbq9WKtK2Jg1LnmDtw6aNbe8PV-9GFp8NY
+
+### Load tickets within date range
+POST  http://localhost:3000/admin/search/ticket
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOnsiX2lkIjoiNWYxZjZlOGUyOTg5OTk1MjFkM2FjOWE1IiwibmFtZSI6ImFkbWluIiwiZGVzYyI6IlRoaXMgaXMgdGhlIHN1cGVyIGFkbWluIHJvbGUiLCJfX3YiOjB9LCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzNjYyODksImV4cCI6MTU5NjM3MzQ4OX0.kB8jMyyhWpANseGTj18_Hk4bxKfemX5uC8uwvT2heQI
+
+{
+  "startDate": "2020-08-01",
+  "endDate": "2020-08-02"
+}
+
+
+
+
+
+### User section 
+GET  http://localhost:3000/profile
+
+### Raise support ticket
+POST http://localhost:3000/profile/raiseticket/5f25e95f723162283dd77e64
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjVlOTVmNzIzMTYyMjgzZGQ3N2U2NCIsImZpcnN0TmFtZSI6IlJhc2FxIiwibGFzdE5hbWUiOiJTdWxhaW1vbiIsImVtYWlsIjoibGVrYW5zdWxhaW1vbjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTDV2dXFSbFBaTWVWZjRmZzAzYkQuT3ZQemFxT0dWQXpDQnRWRXNTanFkNjBlbjl1ZWUyVnUiLCJyb2xlIjoiNWYxZmRkNGIyOTg5OTk1MjFkM2FjOWE3IiwiX192IjowfSwiaWF0IjoxNTk2MzIzMjk2LCJleHAiOjE1OTYzMzA0OTZ9.YxLzJMNGNI9F1b-0P5PJlFBBPAZuJDACs-0B00-W5ng
+
+{
+  "title": "Faulty Laptop",
+  "desc": "The mac laptop purchased some days ago is no longer working"
+}
+
+### Load support tickets
+GET http://localhost:3000/profile/user/5f25e95f723162283dd77e64/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjVlOTVmNzIzMTYyMjgzZGQ3N2U2NCIsImZpcnN0TmFtZSI6IlJhc2FxIiwibGFzdE5hbWUiOiJTdWxhaW1vbiIsImVtYWlsIjoibGVrYW5zdWxhaW1vbjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTDV2dXFSbFBaTWVWZjRmZzAzYkQuT3ZQemFxT0dWQXpDQnRWRXNTanFkNjBlbjl1ZWUyVnUiLCJyb2xlIjoiNWYxZmRkNGIyOTg5OTk1MjFkM2FjOWE3IiwiX192IjowfSwiaWF0IjoxNTk2MzIzMjk2LCJleHAiOjE1OTYzMzA0OTZ9.YxLzJMNGNI9F1b-0P5PJlFBBPAZuJDACs-0B00-W5ng
+
+### Load ticket 
+GET http://localhost:3000/profile/user/5f25e95f723162283dd77e64/ticket/5f25f86df6f4572925bfb730
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjVlOTVmNzIzMTYyMjgzZGQ3N2U2NCIsImZpcnN0TmFtZSI6IlJhc2FxIiwibGFzdE5hbWUiOiJTdWxhaW1vbiIsImVtYWlsIjoibGVrYW5zdWxhaW1vbjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTDV2dXFSbFBaTWVWZjRmZzAzYkQuT3ZQemFxT0dWQXpDQnRWRXNTanFkNjBlbjl1ZWUyVnUiLCJyb2xlIjoiNWYxZmRkNGIyOTg5OTk1MjFkM2FjOWE3IiwiX192IjowfSwiaWF0IjoxNTk2MzIzMjk2LCJleHAiOjE1OTYzMzA0OTZ9.YxLzJMNGNI9F1b-0P5PJlFBBPAZuJDACs-0B00-W5ng
+
+### Update ticket
+PUT http://localhost:3000/profile/user/5f25e95f723162283dd77e64/ticket/5f25f86df6f4572925bfb730
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjVlOTVmNzIzMTYyMjgzZGQ3N2U2NCIsImZpcnN0TmFtZSI6IlJhc2FxIiwibGFzdE5hbWUiOiJTdWxhaW1vbiIsImVtYWlsIjoibGVrYW5zdWxhaW1vbjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTDV2dXFSbFBaTWVWZjRmZzAzYkQuT3ZQemFxT0dWQXpDQnRWRXNTanFkNjBlbjl1ZWUyVnUiLCJyb2xlIjoiNWYxZmRkNGIyOTg5OTk1MjFkM2FjOWE3IiwiX192IjowfSwiaWF0IjoxNTk2MzIzMjk2LCJleHAiOjE1OTYzMzA0OTZ9.YxLzJMNGNI9F1b-0P5PJlFBBPAZuJDACs-0B00-W5ng
+
+{
+  "title": "Faulty Laptop new",
+  "desc": "The mac laptop purchased some days ago is no longer working",
+  "content": "4 years warranty was promised!"
+}
+
+### Add comment to ticket
+POST http://localhost:3000/profile/user/5f25e95f723162283dd77e64/ticket/5f25f86df6f4572925bfb730/comment
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMjBjM2ZiYjAzMTQxMDg5NjU5YTgwYiIsInJvbGUiOnsiX2lkIjoiNWYxZjZlOGUyOTg5OTk1MjFkM2FjOWE1IiwibmFtZSI6ImFkbWluIiwiZGVzYyI6IlRoaXMgaXMgdGhlIHN1cGVyIGFkbWluIHJvbGUiLCJfX3YiOjB9LCJmaXJzdE5hbWUiOiJSYXNhcSIsImxhc3ROYW1lIjoiU3VsYWltb24iLCJlbWFpbCI6Imxla2Fuc3VsYWltb25AZ21haWwuY29tIiwiX192IjowLCJwYXNzd29yZCI6IiQyYiQxMCRqTXplczg5NlcyREp5R2RCOG5Jd2hPSXpTTWZ1L041cWw2aEhaclZiblJieVBQdDRDWWYzSyJ9LCJpYXQiOjE1OTYzMzA1MTAsImV4cCI6MTU5NjMzNzcxMH0.Engyh_AZvFVcR32fDF5Ln3lT8-SNOQ94enENAS09ayA
+
+{
+  "comment": "Yes, Faulty Laptop new is really faulty"
+}
